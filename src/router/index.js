@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import login from '../components/Admin/login.vue'
 import admin from '../components/Admin/admin.vue'
+import cursos from '../components/Admin/cursos.vue'
+import profesores from '../components/Admin/profesores.vue'
 const router = createRouter({
     history: createWebHistory('/Rawr/'), 
     routes: [
@@ -16,6 +18,18 @@ const router = createRouter({
           name: 'Admin',
           component:admin,
           meta: { requiresAuth: true }
+        },
+        {
+          path: '/crud_profesores',
+          name:'Profesores',
+          component:profesores,
+          meta:{requiresAuth: true}
+        },
+        {
+          path: '/crud_cursos',
+          name:'Cursos',
+          component:cursos,
+          meta:{requiresAuth: true}
         }
 
     ]

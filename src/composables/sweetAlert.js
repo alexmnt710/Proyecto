@@ -36,7 +36,7 @@ export function sweetalert() {
             confirmButtonText: 'OK'
         });
     };
-    const confirmAlert = (title, text) => {
+    const confirmAlert = async (title, text) => {
         return Swal.fire({
             title: title,
             text: text,
@@ -44,7 +44,17 @@ export function sweetalert() {
             showCancelButton: true,
             confirmButtonText: 'Yes',
             cancelButtonText: 'No'
+        }).then((result) => {
+            return result.isConfirmed;
         });
     };
-    return { alert, successAlert, errorAlert, confirmAlert, ShowLoading};
+    const showAlert = (title, text) => {
+        Swal.fire({
+            title: title,
+            text: text,
+            confirmButtonText: 'OK'
+        });
+    };
+
+    return { alert, successAlert, errorAlert, confirmAlert, ShowLoading, showAlert};
 }

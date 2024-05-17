@@ -19,7 +19,33 @@ onMounted(() => {
     <div class="body_vue">
         <Header/>
         <div class="container-fluid">
-            <p>Esto es admin</p>
+          <div class="row justify-content-center align-items-center" style="height: 90vh;">
+            <div class="col-3">
+                <div class="d-flex justify-content-center">
+                    <RouterLink :to="{ name: 'Cursos' }">
+                        <button type="button" class="btn_hw btn btn-primary custom-btn">
+                            <i class="bi bi-mortarboard"></i>
+                            <div class="mb-3 mt-2">
+                                Cursos
+                            </div>
+                        </button>
+                    </RouterLink>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="d-flex justify-content-center">
+                    <RouterLink :to="{ name: 'Profesores' }">
+                        <button type="button" class="btn_hw btn btn-secondary custom-btn">
+                            <i class="bi bi-person-add"></i>
+                            <div class="mb-3 mt-2">
+                                Profesores
+                            </div>
+                        </button>
+                    </RouterLink>
+                </div>
+            </div>
+        </div>        
+        
         </div>
     </div>
 
@@ -38,4 +64,17 @@ body {
   .shadow {
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
   }
+  .custom-btn {
+    width: 200px; /* Ajusta este valor según sea necesario */
+    height: 150px; /* Ajusta este valor según sea necesario */
+    font-size: 1.5rem; /* Ajusta el tamaño de fuente del contenido */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-btn i {
+    font-size: 2rem; /* Ajusta el tamaño del icono */
+}
 </style>
