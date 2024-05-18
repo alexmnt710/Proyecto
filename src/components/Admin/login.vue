@@ -23,6 +23,7 @@ const login = async () => {
     }else{
         try {
             const response = await userStore.login(email.value, password.value);
+            
             if (response == true ) {
                 swal.successAlert('Inicio de sesión exitoso', 'Bienvenido a la plataforma de administración');
                 router.push('/admin');

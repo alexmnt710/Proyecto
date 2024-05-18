@@ -18,7 +18,7 @@ const facultad = ref('');
 
 const addCourse = () => {
   const newCourse = {
-    id: cursoStore.cursos.value.length + 1,
+    id: cursoStore.cursos.length + 1,
     nombre: nombre.value,
     descripcion: descripcion.value,
     numeroEstudiantes: numeroEstudiantes.value,
@@ -66,8 +66,7 @@ const viewCourse = (nombre,descripcion,numeroEstudiantes,facultad) => {
 </script>
 <template>
     <Header></Header>
-    <div class="container vh-99 d-flex justify-content-center align-items-center">
-        
+    <div class="container vh-70 d-flex justify-content-center align-items-center">
       <div class="row w-100">
         <div class="col-md-6">
           <h3>Crear Curso</h3>
@@ -110,7 +109,7 @@ const viewCourse = (nombre,descripcion,numeroEstudiantes,facultad) => {
         </div>
       </div>
     </div>
-  </template>
+    </template>
 
 <style scoped>
 

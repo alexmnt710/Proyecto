@@ -65,7 +65,7 @@ const viewProfesor = (nombre,titulo,materia,curso) => {
 </script>
 <template>
     <Header></Header>
-    <div class="container vh-99 d-flex justify-content-center align-items-center">
+    <div class="container vh-70 d-flex justify-content-center align-items-center">
         
       <div class="row w-100" v-if="cursoStore.cursos.length!=0">
         <div class="col-md-6">

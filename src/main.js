@@ -28,7 +28,6 @@ cursos.create(
         descripcion: 'Curso de Informatica',
         numeroEstudiantes: 20,
         facultad: 'Ingenieria'
-         
     }
 )
 user.admin = ({
@@ -40,7 +39,7 @@ user.admin = ({
 profesores.create(
     {
         id: 1,
-        nombre: 'Walter',
+        nombre: 'Walter White',
         titulo: 'Doctor en Ciencias Exactas',
         materia: 'Calculo de una variable',
         curso: 'Ingeniera en Sistemas'

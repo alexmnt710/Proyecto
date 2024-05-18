@@ -3,6 +3,8 @@ import login from '../components/Admin/login.vue'
 import admin from '../components/Admin/admin.vue'
 import cursos from '../components/Admin/cursos.vue'
 import profesores from '../components/Admin/profesores.vue'
+import horarios from '../components/Admin/horarios.vue'
+import asistencias from './../components/Admin/asistencias.vue'
 const router = createRouter({
     history: createWebHistory('/Rawr/'), 
     routes: [
@@ -29,6 +31,18 @@ const router = createRouter({
           path: '/crud_cursos',
           name:'Cursos',
           component:cursos,
+          meta:{requiresAuth: true}
+        },
+        {
+          path: '/crud_horarios',
+          name:'Horarios',
+          component:horarios,
+          meta:{requiresAuth: true}
+        },
+        {
+          path: '/asistencias',
+          name:'Asistencias',
+          component:asistencias,
           meta:{requiresAuth: true}
         }
 

@@ -1,7 +1,8 @@
 <script setup>
-import { RouterLink, useRouter } from 'vue-router'
+import { RouterLink, useRouter, useRoute } from 'vue-router'
 import {sweetalert} from '../composables/sweetAlert';
 import {User} from '../stores/user';
+import { computed } from 'vue';
 
 const swal = sweetalert();
 const router = useRouter()
@@ -20,7 +21,8 @@ const logout = async () => {
         
     }
 };
-
+const route = useRoute();
+const isBasePath = computed(() => route.path == '/admin');
 </script>
 <template>
     <nav class="navbar bg-body-tertiary header_base">
@@ -28,6 +30,11 @@ const logout = async () => {
             <a class="navbar-brand" href="#">
                 <img src="../assets/img/Uleam.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
             </a>
+            <div class="d-flex" v-if="!isBasePath">
+                    <button type="button" class="btn btn-secondary" @click="router.push('/admin')">
+                        <i class="bi bi-arrow-return-left"></i>
+                    </button>
+            </div>
             <div class="d-flex">
                 <div class="btn-group">
                     <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -38,6 +45,7 @@ const logout = async () => {
                     </ul>
                 </div>
             </div>
+            
 
         </div>
     </nav>

@@ -9,6 +9,7 @@ export const User = defineStore('userStore',{
     ),
     actions:{
         async login(user,pass){
+            console.log(this.admin)
             if((user == this.admin.nombre && pass == this.admin.password)){
                 this.sessionAdmin = true
                 return true

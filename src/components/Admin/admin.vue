@@ -44,6 +44,30 @@ onMounted(() => {
                     </RouterLink>
                 </div>
             </div>
+            <div class="col-3">
+                <div class="d-flex justify-content-center">
+                    <RouterLink :to="{ name: 'Horarios' }">
+                        <button type="button" class="btn_hw btn btn-secondary custom-btn">
+                            <i class="bi bi-calendar-check"></i>
+                            <div class="mb-3 mt-2">
+                                Horarios
+                            </div>
+                        </button>
+                    </RouterLink>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="d-flex justify-content-center">
+                    <RouterLink :to="{ name: 'Asistencias' }">
+                        <button type="button" class="btn_hw btn btn-secondary custom-btn">
+                            <i class="bi bi-calendar-check"></i>
+                            <div class="mb-3 mt-2">
+                                Asistencias
+                            </div>
+                        </button>
+                    </RouterLink>
+                </div>
+            </div>
         </div>        
         
         </div>
