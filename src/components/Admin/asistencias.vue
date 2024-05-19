@@ -12,31 +12,36 @@ const filterEstado = (estado) => {
 </script>
 <template>
     <Header/>
-    <div class="container mt-4">
-        <h2>Listado de Asistencias</h2>
-        <div class="d-flex justify-content-center">
-            <button @click="filterEstado('Presente')" class="btn btn-success mr-2">Presentes</button>
-            <button @click="filterEstado('Ausente')" class="btn btn-danger">Ausentes</button>
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-center" style="height: 70vh;">
+            <div class="container mt-4">
+                <h2>Listado de Asistencias</h2>
+                <div class="d-flex justify-content-center">
+                    <button @click="filterEstado('Presente')" class="btn btn-success mr-2">Presentes</button>
+                    <button @click="filterEstado('Ausente')" class="btn btn-danger">Ausentes</button>
+                </div>
+                <table class="table table-striped table-hover mt-3">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Horario</th>
+                            <th>Timestamp</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="asistencia in asistencias" :key="asistencia.id">
+                            <td>{{ asistencia.id }}</td>
+                            <td>{{ asistencia.horario }}</td>
+                            <td>{{ asistencia.timestamp }}</td>
+                            <td>{{ asistencia.estado }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <table class="table table-striped table-hover mt-3">
-            <thead class="thead-dark">
-                <tr>
-                    <th>ID</th>
-                    <th>Horario</th>
-                    <th>Timestamp</th>
-                    <th>Estado</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="asistencia in asistencias" :key="asistencia.id">
-                    <td>{{ asistencia.id }}</td>
-                    <td>{{ asistencia.horario }}</td>
-                    <td>{{ asistencia.timestamp }}</td>
-                    <td>{{ asistencia.estado }}</td>
-                </tr>
-            </tbody>
-        </table>
     </div>
+    
 </template>
 
 <style scoped>
@@ -60,4 +65,5 @@ h2 {
     background-color: #343a40;
     color: white;
 }
+
 </style>

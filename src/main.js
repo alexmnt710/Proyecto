@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
+
 import App from './App.vue'
 
 const app = createApp(App)
@@ -30,12 +31,6 @@ cursos.create(
         facultad: 'Ingenieria'
     }
 )
-user.admin = ({
-    nombre : 'admin',
-    type : 'admin',
-    email : 'admin@gmail.com',
-    password: 'admin',
-})
 profesores.create(
     {
         id: 1,

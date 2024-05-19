@@ -22,15 +22,15 @@ onMounted(() => {
 .watermark::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
+  margin-top: 50px;
   width: 100%;
-  height: 115%;
+  height: 100%;
   background-image: url('./images/LOGO-ULEAM.png'); /* Ruta a tu imagen */
-  background-size: contain; /* Ajusta el tamaño de la imagen */
+  background-size: 60%;
   background-position: center;
   opacity: 0.1; /* Ajusta la opacidad según tus necesidades */
   z-index: -1; /* Coloca la imagen detrás del contenido */
   pointer-events: none; /* Permite interactuar con los elementos de contenido */
+  background-repeat: no-repeat;
 }
 </style>

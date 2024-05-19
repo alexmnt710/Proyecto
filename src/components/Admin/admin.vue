@@ -19,8 +19,8 @@ onMounted(() => {
     <div class="body_vue">
         <Header/>
         <div class="container-fluid">
-          <div class="row justify-content-center align-items-center" style="height: 90vh;">
-            <div class="col-3">
+          <div class="row justify-content-center align-items-center" style="height: 70vh;">
+            <div class="col-2">
                 <div class="d-flex justify-content-center">
                     <RouterLink :to="{ name: 'Cursos' }">
                         <button type="button" class="btn_hw btn btn-primary custom-btn">
@@ -32,10 +32,10 @@ onMounted(() => {
                     </RouterLink>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-2">
                 <div class="d-flex justify-content-center">
                     <RouterLink :to="{ name: 'Profesores' }">
-                        <button type="button" class="btn_hw btn btn-secondary custom-btn">
+                        <button type="button" class="btn_hw btn btn-primary custom-btn">
                             <i class="bi bi-person-add"></i>
                             <div class="mb-3 mt-2">
                                 Profesores
@@ -44,10 +44,10 @@ onMounted(() => {
                     </RouterLink>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-2">
                 <div class="d-flex justify-content-center">
                     <RouterLink :to="{ name: 'Horarios' }">
-                        <button type="button" class="btn_hw btn btn-secondary custom-btn">
+                        <button type="button" class="btn_hw btn btn-primary custom-btn">
                             <i class="bi bi-calendar-check"></i>
                             <div class="mb-3 mt-2">
                                 Horarios
@@ -56,10 +56,10 @@ onMounted(() => {
                     </RouterLink>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-2">
                 <div class="d-flex justify-content-center">
                     <RouterLink :to="{ name: 'Asistencias' }">
-                        <button type="button" class="btn_hw btn btn-secondary custom-btn">
+                        <button type="button" class="btn_hw btn btn-primary custom-btn">
                             <i class="bi bi-calendar-check"></i>
                             <div class="mb-3 mt-2">
                                 Asistencias
@@ -101,4 +101,18 @@ body {
 .custom-btn i {
     font-size: 2rem; /* Ajusta el tamaño del icono */
 }
+.watermark::before {
+    content: '';
+    position: absolute;
+    margin-top: 50px;
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/LOGO-ULEAM.png'); /* Ruta a tu imagen */
+    background-size: 60%;
+    background-position: center;
+    opacity: 0.1; /* Ajusta la opacidad según tus necesidades */
+    z-index: -1; /* Coloca la imagen detrás del contenido */
+    pointer-events: none; /* Permite interactuar con los elementos de contenido */
+    background-repeat: no-repeat;
+  }
 </style>
