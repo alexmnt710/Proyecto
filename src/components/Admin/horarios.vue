@@ -160,15 +160,15 @@ const clearAsis = () => {
                     <div class="form-group mb-3">
                         <label class="form-label">Asistencia:</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" id="falta" v-model="estado" value="falta">
+                            <input class="form-check-input" type="radio" id="falta" v-model="estado" value="Falta">
                             <label class="form-check-label" for="falta">Falta</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" id="asistido" v-model="estado" value="asistido">
+                            <input class="form-check-input" type="radio" id="asistido" v-model="estado" value="Asistido">
                             <label class="form-check-label" for="asistido">Asistido</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" id="atraso" v-model="estado" value="atraso">
+                            <input class="form-check-input" type="radio" id="atraso" v-model="estado" value="Atraso">
                             <label class="form-check-label" for="atraso">Atraso</label>
                         </div>
                         <div class="form-check">

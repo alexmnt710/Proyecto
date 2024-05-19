@@ -1,13 +1,21 @@
 <script setup>
 import { RouterLink, useRouter } from 'vue-router'
+import { computed, ref } from 'vue';
 import {sweetalert} from '../../composables/sweetAlert';
 import { Asistencia } from '../../stores/asistencia';
 import Header from '../header.vue';
-const asistencias= Asistencia().asistencias;
+const asistencias = Asistencia().asistencias;
+const selectedEstado = ref('');
+
+const filteredAsistencias = computed(() => {
+    if (!selectedEstado.value) {
+        return asistencias;
+    }
+    return asistencias.filter(asistencia => asistencia.estado === selectedEstado.value);
+});
 
 const filterEstado = (estado) => {
-    asistencias = asistencias.filter(asistencia => asistencia.estado === estado);
-    
+    selectedEstado.value = estado;
 };
 </script>
 <template>
@@ -17,8 +25,10 @@ const filterEstado = (estado) => {
             <div class="container mt-4">
                 <h2>Listado de Asistencias</h2>
                 <div class="d-flex justify-content-center">
-                    <button @click="filterEstado('Presente')" class="btn btn-success mr-2 me-2">Presentes</button>
-                    <button @click="filterEstado('Ausente')" class="btn btn-danger">Ausentes</button>
+                    <button @click="filterEstado('Asistido')" class="btn btn-success mr-2 me-2">Asistido</button>
+                    <button @click="filterEstado('Falta')" class="btn btn-danger mr-2 me-2">Ausentes</button>
+                    <button @click="filterEstado('')" class="btn btn-success mr-2 me-2">limpiar filtro</button>
+                    <button @click="filterEstado('Atraso')" class="btn btn-warning mr-2 me-2">Atraso</button>
                 </div>
                 <table class="table table-striped table-hover mt-3">
                     <thead class="thead-dark">
@@ -30,12 +40,16 @@ const filterEstado = (estado) => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="asistencia in asistencias" :key="asistencia.id">
+                        <tr v-if="filteredAsistencias.length === 0">
+                            <td colspan="4" class="text-center">No hay asistencias que coincidan con los filtros seleccionados</td>
+                        </tr>
+                        <tr v-for="asistencia in filteredAsistencias" :key="asistencia.id">
                             <td>{{ asistencia.id }}</td>
                             <td>{{ asistencia.horario }}</td>
                             <td>{{ asistencia.timestamp }}</td>
                             <td>{{ asistencia.estado }}</td>
                         </tr>
+                        
                     </tbody>
                 </table>
             </div>
