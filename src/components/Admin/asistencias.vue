@@ -17,7 +17,7 @@ const filterEstado = (estado) => {
             <div class="container mt-4">
                 <h2>Listado de Asistencias</h2>
                 <div class="d-flex justify-content-center">
-                    <button @click="filterEstado('Presente')" class="btn btn-success mr-2">Presentes</button>
+                    <button @click="filterEstado('Presente')" class="btn btn-success mr-2 me-2">Presentes</button>
                     <button @click="filterEstado('Ausente')" class="btn btn-danger">Ausentes</button>
                 </div>
                 <table class="table table-striped table-hover mt-3">
