@@ -19,7 +19,7 @@ const curso = ref('');
 
 const addprofesor = () => {
   const newProfesor = {
-    id: profesorStore.profesores.value.length + 1,
+    id: profesorStore.profesores.length + 1,
     nombre: nombre.value,
     titulo: titulo.value,
     materia: materia.value,
